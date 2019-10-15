@@ -391,6 +391,9 @@ class SafeMainActivity : ViewModelActivity<SafeMainContract>() {
                     R.id.safe_details_menu_connect -> selectedSafe?.let { safe ->
                         startActivity(ConnectAuthenticatorActivity.createIntent(this, safe.address()))
                     }
+                    R.id.safe_details_menu_remove_2fa -> selectedSafe?.let { safe ->
+                        //TODO: start disable 2fa activity
+                    }
                 }
             }, onError = Timber::e)
     }
@@ -405,6 +408,7 @@ class SafeMainActivity : ViewModelActivity<SafeMainContract>() {
         popupMenu.menu.findItem(R.id.safe_details_menu_sync).isVisible = false
         popupMenu.menu.findItem(R.id.safe_details_menu_replace_browser_extension).isVisible = false
         popupMenu.menu.findItem(R.id.safe_details_menu_connect).isVisible = false
+        popupMenu.menu.findItem(R.id.safe_details_menu_remove_2fa).isVisible = false
     }
 
     @ExperimentalCoroutinesApi
@@ -424,6 +428,7 @@ class SafeMainActivity : ViewModelActivity<SafeMainContract>() {
         popupMenu.menu.findItem(R.id.safe_details_menu_sync).isVisible = isConnected && selectedSafe is Safe
         popupMenu.menu.findItem(R.id.safe_details_menu_replace_browser_extension).isVisible = isConnected && selectedSafe is Safe
         popupMenu.menu.findItem(R.id.safe_details_menu_connect).isVisible = !isConnected && selectedSafe is Safe
+        popupMenu.menu.findItem(R.id.safe_details_menu_remove_2fa).isVisible = isConnected && selectedSafe is Safe
     }
 
     private fun renameSafe(safe: AbstractSafe) {
