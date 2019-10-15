@@ -544,5 +544,6 @@ Without it, you won’t be able to recover your Safe and money.</string>
     <string name="keycard_blocked">Keycard blocked</string>
     <string name="keycard_unblock_get_in_touch">To restore the Keycard please get in touch with us.</string>
     <string name="keycard_blocked_subject">Keycard blocked (%1$s)</string>
-    <string name="disconnect_2fa">Disable 2FA</string>
+    <string name="disable_2fa">Disable 2FA</string>
+    <string name="disable_2fa_description">Once this process is complete, your existing 2FA device will be removed from this Safe and thus 2FA will be disabled. You will be able to set up 2FA again in the Safe menu.\n\nPlease have your recovery phrase ready to disable 2FA.</string>
 </resources>
