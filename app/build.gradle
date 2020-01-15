@@ -150,6 +150,8 @@ android {
             returnDefaultValues = true
         }
     }
+
+    viewBinding.enabled = true
 }
 
 androidExtensions {

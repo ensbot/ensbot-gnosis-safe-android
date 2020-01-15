@@ -5,34 +5,39 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import kotlinx.android.synthetic.main.screen_get_in_touch.*
 import pm.gnosis.heimdall.R
 import pm.gnosis.heimdall.reporting.ScreenId
 import pm.gnosis.heimdall.ui.base.BaseActivity
 import com.google.android.material.snackbar.Snackbar
+import pm.gnosis.heimdall.databinding.ScreenGetInTouchBinding
 import pm.gnosis.svalinn.common.utils.snackbar
 
 
 class GetInTouchActivity : BaseActivity() {
 
+    private val binding by lazy {
+        ScreenGetInTouchBinding.inflate(layoutInflater)
+    }
+
     override fun screenId() = ScreenId.GET_IN_TOUCH
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.screen_get_in_touch)
+        setContentView(binding.root)
+        with(binding) {
+            toolbarBackArrow.setOnClickListener {
+                onBackPressed()
+            }
 
-        touch_toolbar_back_arrow.setOnClickListener {
-            onBackPressed()
-        }
-
-        touch_telegram.setOnClickListener {
-            openTelegramChannel()
-        }
-        touch_email.setOnClickListener {
-            sendEmail()
-        }
-        touch_gitter.setOnClickListener {
-            openGitterChannel()
+            telegram.setOnClickListener {
+                openTelegramChannel()
+            }
+            email.setOnClickListener {
+                sendEmail()
+            }
+            gitter.setOnClickListener {
+                openGitterChannel()
+            }
         }
     }
 
@@ -53,7 +58,7 @@ class GetInTouchActivity : BaseActivity() {
         try {
             startActivity(intent)
         } catch (ex: ActivityNotFoundException) {
-            snackbar(touch_toolbar_background, getString(R.string.email_chooser_error), Snackbar.LENGTH_SHORT)
+            snackbar(binding.root, getString(R.string.email_chooser_error), Snackbar.LENGTH_SHORT)
         }
     }
 

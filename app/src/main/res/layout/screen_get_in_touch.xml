@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     
     <View
-        android:id="@+id/touch_toolbar_background"
+        android:id="@+id/toolbar_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:background="@color/white" />
 
     <ImageView
-        android:id="@+id/touch_toolbar_back_arrow"
+        android:id="@+id/toolbar_back_arrow"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/toolbar_height"
         android:background="@drawable/selectable_circle_background"
@@ -26,34 +26,34 @@
         app:srcCompat="@drawable/ic_arrow_back_24dp" />
 
     <TextView
-        android:id="@+id/touch_toolbar_title"
+        android:id="@+id/toolbar_title"
         style="@style/WhiteTheme.ToolbarTitle"
         android:layout_width="0dp"
         android:layout_height="@dimen/toolbar_height"
         android:gravity="center_vertical"
         android:text="@string/get_in_touch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/touch_toolbar_back_arrow"
+        app:layout_constraintStart_toEndOf="@+id/toolbar_back_arrow"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/touch_toolbar_shadow"
+        android:id="@+id/toolbar_shadow"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_shadow_size"
         android:background="@drawable/toolbar_dropshadow"
-        app:layout_constraintTop_toBottomOf="@id/touch_toolbar_title" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar_title" />
 
     <!-- Telegram -->
 
     <View
-        android:id="@+id/touch_telegram"
+        android:id="@+id/telegram"
         android:layout_width="match_parent"
         android:layout_height="68dp"
         android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/touch_toolbar_shadow" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_shadow" />
 
     <TextView
-        android:id="@+id/touch_telegram_title"
+        android:id="@+id/telegram_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -66,29 +66,29 @@
         android:gravity="center_vertical"
         android:textStyle="normal"
         android:textColor="#001428"
-        app:layout_constraintBottom_toBottomOf="@+id/touch_telegram"
-        app:layout_constraintEnd_toEndOf="@+id/touch_telegram"
-        app:layout_constraintStart_toStartOf="@+id/touch_telegram"
-        app:layout_constraintTop_toBottomOf="@+id/touch_toolbar_shadow" />
+        app:layout_constraintBottom_toBottomOf="@+id/telegram"
+        app:layout_constraintEnd_toEndOf="@+id/telegram"
+        app:layout_constraintStart_toStartOf="@+id/telegram"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_shadow" />
 
     <View
-        android:id="@+id/touch_telegram_divider"
+        android:id="@+id/telegram_divider"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/divider"
-        app:layout_constraintTop_toBottomOf="@id/touch_telegram" />
+        app:layout_constraintTop_toBottomOf="@id/telegram" />
 
     <!-- E-mail -->
 
     <View
-        android:id="@+id/touch_email"
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="68dp"
         android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/touch_telegram_divider" />
+        app:layout_constraintTop_toBottomOf="@+id/telegram_divider" />
 
     <TextView
-        android:id="@+id/touch_email_title"
+        android:id="@+id/email_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -101,30 +101,30 @@
         android:textColor="#001428"
         android:textSize="14sp"
         android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="@+id/touch_email"
-        app:layout_constraintEnd_toEndOf="@+id/touch_email"
-        app:layout_constraintStart_toStartOf="@+id/touch_email"
-        app:layout_constraintTop_toBottomOf="@+id/touch_telegram_divider" />
+        app:layout_constraintBottom_toBottomOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/telegram_divider" />
 
     <View
-        android:id="@+id/touch_email_divider"
+        android:id="@+id/email_divider"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/divider"
-        app:layout_constraintTop_toBottomOf="@id/touch_email" />
+        app:layout_constraintTop_toBottomOf="@id/email" />
 
 
     <!-- Gitter -->
 
     <View
-        android:id="@+id/touch_gitter"
+        android:id="@+id/gitter"
         android:layout_width="match_parent"
         android:layout_height="68dp"
         android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/touch_email_divider" />
+        app:layout_constraintTop_toBottomOf="@+id/email_divider" />
 
     <TextView
-        android:id="@+id/touch_gitter_title"
+        android:id="@+id/gitter_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -137,9 +137,9 @@
         android:textColor="#001428"
         android:textSize="14sp"
         android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="@+id/touch_gitter"
-        app:layout_constraintEnd_toEndOf="@+id/touch_gitter"
-        app:layout_constraintStart_toStartOf="@+id/touch_gitter"
-        app:layout_constraintTop_toBottomOf="@+id/touch_email_divider" />
+        app:layout_constraintBottom_toBottomOf="@+id/gitter"
+        app:layout_constraintEnd_toEndOf="@+id/gitter"
+        app:layout_constraintStart_toStartOf="@+id/gitter"
+        app:layout_constraintTop_toBottomOf="@+id/email_divider" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
